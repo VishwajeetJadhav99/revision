@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+    name: ssdatabse
+    labels:
+         app: ssdb2
+spec:
+   replicas: 1
+   serviceName: ssvish
+   selector:
+     matchLabels:
+         app: ssdb2
+   template:
+      metadata: 
+          labels: 
+             app: ssdb2
+             name: sspod
+          
+      spec: 
+       containers:
+       - name: ssdb2
+         image: mysql:latest
+         ports:
+          - containerPort: 3306
+            protocol: TCP
+         env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef: 
+                 name: config-db
+                 key: root_pw2
