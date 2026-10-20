@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
     name: cipodv
-    namespace: Vish
+    namespace: vish
     labels:
        app: cipodv 
 spec:
@@ -17,7 +17,7 @@ apiVersion: v1
 kind: Service
 metadata:
     name: ciservice
-    namespace: Vish
+    namespace: vish
 spec:
   selector:
       app: cipodv

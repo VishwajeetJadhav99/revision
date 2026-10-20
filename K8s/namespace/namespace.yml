@@ -17,6 +17,6 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: Vish
+  name: vish
   labels: 
-    app: Vish
+    app: vish
