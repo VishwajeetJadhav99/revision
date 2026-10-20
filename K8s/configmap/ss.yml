@@ -27,5 +27,5 @@ spec:
           - name: MYSQL_ROOT_PASSWORD
             valueFrom:
               secretKeyRef: 
-                 name: 
+                 name: config-db
                  key: root_pw2
