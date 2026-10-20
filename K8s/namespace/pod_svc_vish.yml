@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: cipodv
+    namespace: Vish
+    labels:
+       app: cipodv 
+spec:
+  containers:
+     - image: nginx:latest
+       ports: 
+        - containerPort: 80
+       name: nginxcont
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: ciservice
+    namespace: Vish
+spec:
+  selector:
+      app: cipodv
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP

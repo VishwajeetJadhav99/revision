@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: amzaon
+  labels: 
+    app: amzaon
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: flipkart
+  labels: 
+    app: flipkart
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: Vish
+  labels: 
+    app: Vish
