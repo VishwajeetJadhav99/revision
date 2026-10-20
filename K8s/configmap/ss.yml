@@ -3,22 +3,22 @@ kind: StatefulSet
 metadata:
     name: ssdatabse
     labels:
-         app: ssdb2
+         app: ssdb1
 spec:
    replicas: 1
    serviceName: ssvish
    selector:
      matchLabels:
-         app: ssdb2
+         app: ssdb1
    template:
       metadata: 
           labels: 
-             app: ssdb2
+             app: ssdb1
              name: sspod
           
       spec: 
        containers:
-       - name: ssdb2
+       - name: ssdb1
          image: mysql:latest
          ports:
           - containerPort: 3306
@@ -27,5 +27,5 @@ spec:
           - name: MYSQL_ROOT_PASSWORD
             valueFrom:
               secretKeyRef: 
-                 name: config-db
+                 name: 
                  key: root_pw2
