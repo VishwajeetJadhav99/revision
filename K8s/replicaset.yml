@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+    name: vjrs
+    labels:
+       app: vjrs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+       app: nginxpodrs
+  template:
+      metadata:
+          
+          labels:
+             app: nginxpodrs
+      spec:
+        containers:
+          - image: nginx:latest
+            ports: 
+              - containerPort: 80
+            name: nginxcont
+      
+      

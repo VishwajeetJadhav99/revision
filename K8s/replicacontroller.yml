@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Replicacontroller
+metadata:
+    name: vjrc
+    labels:
+       app: vjrc
+spec:
+  replicas: 3
+  selector:
+       app: nginxpodrc
+  template:
+      metadata:
+          
+          labels:
+             app: nginxpodrc
+      spec:
+        containers:
+          - image: nginx:latest
+            ports: 
+              - containerPort: 80
+            name: nginxcont
+      
