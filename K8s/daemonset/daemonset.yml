@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata: 
+   name: dset
+   labels:
+     app: dset
+spec:
+  selector:
+     matchLabels:
+       app: dset
+  template:
+    metadata:
+       name: dset
+       labels:
+        app: dset
+    spec:
+      containers:
+         - name: dcon
+           image: nginx
+           ports:
+            - containerPort: 80
+              protocol: TCP
+         
+        
