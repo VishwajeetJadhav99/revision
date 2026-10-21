@@ -26,7 +26,7 @@ spec:
       spec:
         containers:
           - name: mederp-container
-          - image: nginx:latest
+            image: nginx:latest
             ports: 
               - containerPort: 80
                 
