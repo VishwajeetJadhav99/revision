@@ -26,5 +26,9 @@ spec:
                port: 
                  number: 8080
           
+
+#Annotation = extra metadata or configuration instructions attached to a Kubernetes resource. 
+#all ingress controllers have different annotations, search on internet for annotations
+#in short annotations tells K8s which ingress controler is using because ingress controller is external object 
        
       
