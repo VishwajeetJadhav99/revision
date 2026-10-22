@@ -60,3 +60,8 @@ spec:
             target:
               type: Utilization
               averageUtilization: 10
+
+# commands 
+# kubectl exec -it podname -- sh for get inside pod
+#apt-get update && apt-get install -y stress
+#stress --cpu 2 --timeout 300s
