@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pv-claim
+  labels:
+   app: pv-claim
+spec:
+  storageClassName: standard
+  volumeMode: filesystem
+  accessModes:
+    - ReadWriteOnce
+  resources:
+     requests:
+        storage: 10Gi
+
+
+
+#things to remember
+#1. metadata name and labels should same as pod name 
+#2. storageclassname and volumemode change according to storage type
+#3. accessmodes 
+#4. request tells how much maximun storage size pvc can transfer

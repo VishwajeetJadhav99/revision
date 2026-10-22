@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: pod
+spec:
+ volumes:
+   - name: mypvc
+     persistentVolumeClaim:
+       claimname: pv-claim
+ containers:
+     - image: nginx:latest
+       ports: 
+        - containerPort: 80
+       name: nginxcont
+       volumeMounts:
+         - mountPath: "/etc/passwd"
+           name: my-pd
+
+        
