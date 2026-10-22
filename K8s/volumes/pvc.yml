@@ -18,5 +18,5 @@ spec:
 #things to remember
 #1. metadata name and labels should same as pod name 
 #2. storageclassname and volumemode change according to storage type
-#3. accessmodes 
+#3. accessmodes In Kubernetes, Access Modes define how a PersistentVolume (PV) can be mounted by Pods or nodes. They specify whether storage can be read or written and how many nodes can mount it.
 #4. request tells how much maximun storage size pvc can transfer

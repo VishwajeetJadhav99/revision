@@ -14,3 +14,6 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   hostPath:
     path: "/mnt/data"
+
+
+# pv have same yml file as pvc but instead of resource it has capacity parameter, persistentVolumeReclaimPolicy and hostPath:
