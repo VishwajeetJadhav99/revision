@@ -31,13 +31,13 @@ spec:
               - containerPort: 80
                 
                 protocol: TCP
-        resources: 
-          requests:  # lower limit
-             cpu: "100m"
-             memory: "256Mi"
-          limits:   # upper limit
-            cpu: "500m"
-            memory: "512Mi"
+            resources: 
+              requests:  # lower limit
+               cpu: "100m"
+               memory: "256Mi"
+               limits:   # upper limit
+               cpu: "500m"
+               memory: "512Mi"
 
 ---
 apiVersion: autoscaling/v2 
@@ -51,9 +51,9 @@ spec:
      apiVersion: apps/v1
      kind: Deployment
      name: mederp
-     minReplicas: 1
-     maxReplicas: 2
-     metrics:
+  minReplicas: 1
+  maxReplicas: 2
+  metrics:
       - type: Resource
         resource:
             name: cpu
