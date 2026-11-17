@@ -11,7 +11,7 @@ resource "aws_instance" "web_server" {
   instance_type = var.itype
 
   vpc_security_group_ids = [
-    var.sg
+     data.aws_security_group.sgdatablock.id
   ]
 
   key_name = var.keyname
@@ -28,4 +28,25 @@ resource "aws_instance" "web_server" {
   tags = {
     Name = "Web-Server-${count.index + 1}"
   }
+}
+
+
+
+data "aws_security_group" "sgdatablock" {
+   
+   name = "SG for the jenkins"
+
+}
+
+output "inip" {
+  value = aws_instance.web_server[*].public_ip
+
+}
+
+
+
+output "pubip" {
+  value = aws_instance.web_server[*].public_dns
+
+
 }
